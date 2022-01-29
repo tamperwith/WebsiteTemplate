@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<script src="https://kit.fontawesome.com/2da9bccd0d.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Raleway:wght@200&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+		<link rel="stylesheet" href="index.css" />
+		<title>Lanima</title>
+	</head>
+	<body>
+		<script>
+			function scrollDown(num = 0) {
+				console.log("asdasdasd");
+				document.body.scrollTop = num;
+				document.documentElement.scrollTop = num;
+			}
+		</script>
+		<div class="navbar level-right">
+			<button class="button is-dark is-inversed is-outlined is-rounded" onclick="scrollDown(0)">Home</button>
+			<button class="button is-dark is-inversed is-outlined is-rounded" onclick="scrollDown(800)">About</button>
+			<button class="button is-dark is-inversed is-outlined is-rounded" onclick="scrollDown(1503)">Services</button>
+			<button class="button is-dark is-inversed is-outlined is-rounded" onclick="scrollDown(2058)">Testimonials</button>
+			<button class="button is-dark is-inversed is-outlined is-rounded" onclick="scrollDown(1968)">Contact</button>
+		</div>
+
+		<div class="section is-medium has-text-left">
+			<div class="headerTitle">
+				<p class="title is-1">Website Title</p>
+				<h1 class="subtitle">Website Subitle</h1>
+			</div>
+			<button class="button is-dark is-rounded mt-5" onclick="scrollDown(800)">Learn More</button>
+		</div>
+		<div class="gradient section"></div>
+		<div class="below section is-medium">
+			<div class="columns">
+				<div class="column">
+					<div class="content">
+						<h1>About</h1>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure<br />
+							dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,<br />
+							sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+				<div class="column is-offset-3">
+					<img class="aboutImage" src="about.jpg" />
+				</div>
+			</div>
+		</div>
+		<div class="description section is-medium">
+			<div class="has-text-centered">
+				<p class="title">Services</p>
+				<p class="subtitle">Taking Your Business to the Next Level</p>
+				<div class="columns">
+					<div class="column">
+						<div class="notification is-dark">
+							<i class="fas fa-cog fa-4x mb-5"></i>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+						</div>
+					</div>
+					<div class="column">
+						<div class="notification is-dark">
+							<i class="fas fa-check fa-4x mb-5"></i>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+						</div>
+					</div>
+					<div class="column">
+						<div class="notification is-dark">
+							<i class="fas fa-coins fa-4x mb-5"></i>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero is-success is-halfheight">
+			<div class="section has-text-centered">
+				<p class="title is-3">Testimonials</p>
+			</div>
+			<div class="columns is-medium">
+				<div class="column">
+					<div class="testimonialBtn" onclick="pastTestimonial()"><i class="fas fa-arrow-circle-left fa-4x"></i></div>
+				</div>
+				<div class="column is-10 has-text-centered">
+					<div class="testimonial invisible">
+						<h1 class="title is-1">“I'm a testimonial. This is great!”</h1>
+						<p>1/3</p>
+						<div class="section"></div>
+
+						<p><strong>Michael Scott</strong></p>
+						<p>Company Name</p>
+					</div>
+					<div class="testimonial invisible">
+						<h1 class="title is-1">“I'm another testimonial. Good business!"</h1>
+						<p>2/3</p>
+						<div class="section"></div>
+
+						<p><strong>Cosmo Kramer</strong></p>
+						<p>Company Name</p>
+					</div>
+					<div class="testimonial invisible">
+						<h1 class="title is-1">“I'm the 3rd testimonial. Fantastic!”</h1>
+						<p class="mt-5">3/3</p>
+						<div class="section"></div>
+
+						<p><strong>Art Vandelay</strong></p>
+						<p>Company Name</p>
+					</div>
+				</div>
+				<div class="column has-text-right">
+					<div class="testimonialBtn" onclick="nextTestimonial()"><i class="fas fa-arrow-circle-right fa-4x"></i></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var testimonials = document.getElementsByClassName("testimonial");
+			var current = 0;
+			testimonials[current].className = "testimonial";
+			function nextTestimonial() {
+				testimonials[current].className = "testimonial invisible";
+				current++;
+				if (current > testimonials.length - 1) current = 0;
+				testimonials[current].className = "testimonial";
+			}
+			function pastTestimonial() {
+				testimonials[current].className = "testimonial invisible";
+				current--;
+				if (current < 0) current = testimonials.length - 1;
+				testimonials[current].className = "testimonial";
+			}
+		</script>
+		<div class="hero is-dark">
+			<div class="hero-body columns mb-0">
+				<div class="column">
+					<p class="title">Contact</p>
+					<p class="subtitle">Lets work together!</p>
+				</div>
+				<div class="column is-7">
+					<div class="field is-horizontal">
+						<div class="field-label is-normal">
+							<label class="label">From</label>
+						</div>
+						<div class="field-body">
+							<div class="field">
+								<p class="control is-expanded has-icons-left">
+									<input class="input" type="text" placeholder="Name" />
+									<span class="icon is-small is-left">
+										<i class="fas fa-user"></i>
+									</span>
+								</p>
+							</div>
+							<div class="field">
+								<p class="control is-expanded has-icons-left has-icons-right">
+									<input class="input is-success" type="email" placeholder="Email" />
+									<span class="icon is-small is-left">
+										<i class="fas fa-envelope"></i>
+									</span>
+									<span class="icon is-small is-right">
+										<i class="fas fa-check"></i>
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="field is-horizontal">
+						<div class="field-label"></div>
+						<div class="field-body">
+							<div class="field is-expanded">
+								<p class="control is-expanded">
+									<input class="input" type="tel" placeholder="Your phone number" />
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="field is-horizontal">
+						<div class="field-label is-normal">
+							<label class="label">Question</label>
+						</div>
+						<div class="field-body">
+							<div class="field">
+								<div class="control">
+									<textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="field is-horizontal">
+						<div class="field-label">
+							<!-- Left empty for spacing -->
+						</div>
+						<div class="field-body">
+							<div class="field">
+								<div class="control">
+									<button class="button is-primary">Send message</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

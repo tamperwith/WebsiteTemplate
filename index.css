@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.gradient {
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0) 100%);
+}
+
+body {
+	background-image: url("./mountain.jpg");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+button {
+	margin-left: 4px;
+	margin-top: 4px;
+}
+
+.below {
+	background-color: black;
+}
+.navbar {
+	background-color: rgba(0, 0, 0, 0);
+	position: fixed;
+	top: 0;
+	right: 12px;
+}
+.headerTitle {
+	padding-top: 250px;
+}
+.headerTitle * {
+	color: white;
+}
+
+.description {
+	background-color: white;
+}
+.image {
+	width: 100%;
+}
+.invisible {
+	display: none;
+}
+
+.testimonial: {
+	animation: shake-animation 4.72s ease infinite;
+}
+
+.testimonialBtn:hover {
+	transform: scale(0.9);
+}
+
+.testimonialBtn:active {
+	transform: scale(1);
+}
+
+@keyframes shake-animation {
+	0% {
+		transform: translate(0, 0);
+	}
+	1.78571% {
+		transform: translate(5px, 0);
+	}
+	3.57143% {
+		transform: translate(0, 0);
+	}
+	5.35714% {
+		transform: translate(5px, 0);
+	}
+	7.14286% {
+		transform: translate(0, 0);
+	}
+	8.92857% {
+		transform: translate(5px, 0);
+	}
+	10.71429% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
